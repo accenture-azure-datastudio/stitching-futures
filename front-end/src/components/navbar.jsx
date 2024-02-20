@@ -10,8 +10,8 @@ function NavBar() {
       />
 
       <div className="flex items-center">
-        <div className="mr-10 right-10">FAQ</div>
-        <div className="mr-20">
+        <div className="mr-10 pr-3 right-10">FAQ</div>
+        <div className="mr-20 pr-5">
           <RxHamburgerMenu size={25} />
         </div>
       </div>
