@@ -1,4 +1,6 @@
 import Button from './components/button';
+import Footer from './components/footer';
+import Footer2 from './components/footer2';
 import NavBar from './components/navbar';
 
 function App() {
@@ -9,7 +11,7 @@ function App() {
 
   return (
     <div>
-    <div class='Header'>
+    <div>
     <NavBar />
     </div>
 
@@ -88,6 +90,10 @@ function App() {
 
     </section>
 
+
+    <Footer />
+
+    <Footer2 />
     </div>
 
   )

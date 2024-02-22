@@ -3,7 +3,11 @@ module.exports = {
   purge: ['./src/**/*.js', 'src/components/*.jsx'],
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        light: '#FF6F61',
+      },
+    },
   },
   plugins: [],
 }
