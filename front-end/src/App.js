@@ -1,26 +1,49 @@
+import { useState } from 'react';
 import Button from './components/button';
 import Footer from './components/footer';
 import Footer2 from './components/footer2';
 import NavBar from './components/navbar';
+import Sidebar from './components/postcode-sidebar';
+import { RxHamburgerMenu } from "react-icons/rx";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [hover, setHover] = useState(false);
 
-  const handleClick = () => {
-    alert('Button clicked!');
-  };
 
   return (
     <div>
     <div>
-    <NavBar />
+    <div className="flex justify-between items-center w-full h-full mt-2 ml-5 ">
+      <img
+        src="/logo.png"
+        alt="Logo"
+        className="w-41 h-20 ml-10"
+      />
+
+      <div className="flex items-center">
+        <div className="mr-10 pr-3 right-10">FAQ</div>
+        <div className="mr-20 pr-5">
+          <RxHamburgerMenu size={25}       style={{ 
+        color: hover ? 'darkgray' : 'gray',
+        cursor: 'pointer' // This ensures the cursor changes to a hand
+      }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+ onClick={()=> setIsOpen(!isOpen)}/>
+        </div>
+      </div>
+    </div>
     </div>
 
+
+  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
 
     <section>
     <div className='m-5 pt-15 pr-10 flex flex-row'>
     <div className='flex-col w-25% pt-20 pl-10'>
-    <div className='font-semibold text-6xl font-sans mt-5  '>Donation<br/>Genie</div>
-    <Button className=" bg-black text-white mt-10  py-4 px-9 font-sans font-semibold " onClick={handleClick}>
+    <div className='font-semibold text-6xl font-sans mt-5  '>Stitching<br/>futures</div>
+    <Button className=" bg-black text-white mt-10  py-4 px-9 font-sans font-semibold hover:bg-blue-700 " onClick={()=> setIsOpen(!isOpen)}>
       Search by PostCode now
       </Button>
     </div>
