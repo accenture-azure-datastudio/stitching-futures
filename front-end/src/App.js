@@ -13,8 +13,9 @@ function App() {
 
   return (
     <div>
+    <div className={`main-content ${isOpen ? ' bg-gray-200 opacity-75' : ''} h-full`}>
     <div>
-    <div className="flex justify-between items-center w-full h-full mt-2 ml-5 ">
+    <div className="flex justify-between items-center w-full h-full  ml-5 ">
       <img
         src="/logo.png"
         alt="Logo"
@@ -36,9 +37,6 @@ function App() {
     </div>
     </div>
 
-
-  <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
-
     <section>
     <div className='m-5 pt-15 pr-10 flex flex-row'>
     <div className='flex-col w-25% pt-20 pl-10'>
@@ -52,7 +50,8 @@ function App() {
     <img
         src="/guesswork.png"
         alt="Logo"
-        className="w-80% h-auto mr-5 ml-4 pr-10 "
+        className=" h-64 md:h-64 lg:h-96 object-cover w-full"
+
       />
     </div>
     </div>
@@ -117,6 +116,10 @@ function App() {
     <Footer />
 
     <Footer2 />
+    </div>
+
+    
+     <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
 
   )
