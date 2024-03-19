@@ -5,16 +5,18 @@ import Footer2 from './components/footer2';
 import NavBar from './components/navbar';
 import Sidebar from './components/postcode-sidebar';
 import { RxHamburgerMenu } from "react-icons/rx";
+import FAQSidebar from './components/faq-sidebar';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isFAQOpen, setIsFAQOpen] = useState(false)
   const [hover, setHover] = useState(false);
-
+  const [hoverFAQ, setFAQHover] = useState(false);
 
   return (
     <div>
-    <div className={`main-content ${isOpen ? ' bg-gray-200 opacity-75' : ''} h-full`}>
-    <div>
+    <div className={`main-content ${isOpen || isFAQOpen ? ' bg-gray-200 opacity-50' : ''} h-full`}>
+    <div> 
     <div className="flex justify-between items-center w-full h-full  ml-5 ">
       <img
         src="/logo.png"
@@ -23,7 +25,13 @@ function App() {
       />
 
       <div className="flex items-center">
-        <div className="mr-10 pr-3 right-10">FAQ</div>
+        <div className="mr-10 pr-3 right-10"   style={{ 
+        color: hoverFAQ ? 'darkgray' : 'gray',
+        cursor: 'pointer' // This ensures the cursor changes to a hand
+      }}  
+      onMouseEnter={() => setFAQHover(true)}
+      onMouseLeave={() => setFAQHover(false)} 
+      onClick={()=> setIsFAQOpen(!isFAQOpen)}>FAQ</div>
         <div className="mr-20 pr-5">
           <RxHamburgerMenu size={25}       style={{ 
         color: hover ? 'darkgray' : 'gray',
@@ -120,6 +128,7 @@ function App() {
 
     
      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+     <FAQSidebar isOpen={isFAQOpen} setIsOpen={setIsFAQOpen} />
     </div>
 
   )

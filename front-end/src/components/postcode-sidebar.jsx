@@ -91,7 +91,7 @@ return (
       onMouseLeave={() => setHover(false)} onClick={handleClose}/>
   </div>
   <hr />
-  <div className=" mt-10 text-center text-3xl font-sans font-semibold text-black ">This service is completely free. </div> 
+  <div className=" mt-5 text-center text-2xl font-sans font-semibold text-black ">This service is completely free. </div> 
   <div className="flex items-center m-5 p-2 border-gray-300flex border-2 border-gray-200 overflow-hidden ">
     <input
       type="text"
