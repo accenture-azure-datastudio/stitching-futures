@@ -6,16 +6,19 @@ import NavBar from './components/navbar';
 import Sidebar from './components/postcode-sidebar';
 import { RxHamburgerMenu } from "react-icons/rx";
 import FAQSidebar from './components/faq-sidebar';
+import RegistrationSideBar from './components/registration-sidebar';
+import FakeSidebar from './components/fakepost-sidebar';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
   const [isFAQOpen, setIsFAQOpen] = useState(false)
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false)
   const [hover, setHover] = useState(false);
   const [hoverFAQ, setFAQHover] = useState(false);
 
   return (
     <div>
-    <div className={`main-content ${isOpen || isFAQOpen ? ' bg-gray-200 opacity-50' : ''} h-full`}>
+    <div className={`main-content ${isOpen || isFAQOpen || isRegisterOpen  ? ' bg-gray-200 opacity-50' : ''} h-full`}>
     <div> 
     <div className="flex justify-between items-center w-full h-full  ml-5 ">
       <img
@@ -49,9 +52,13 @@ function App() {
     <div className='m-5 pt-15 pr-10 flex flex-row'>
     <div className='flex-col w-25% pt-20 pl-10'>
     <div className='font-semibold text-6xl font-sans mt-5  '>Stitching<br/>futures</div>
-    <Button className=" bg-black text-white mt-10  py-4 px-9 font-sans font-semibold hover:bg-blue-700 " onClick={()=> setIsOpen(!isOpen)}>
-      Search by PostCode now
+    <Button className=" bg-black text-white mt-5  w-56  py-4 px-5 font-sans font-semibold hover:bg-blue-700 " onClick={()=> setIsRegisterOpen(!isRegisterOpen)}>
+      Register with Us Now
       </Button>
+    <Button className=" bg-black text-white mt-5  w-56 py-4 px-5 font-sans font-semibold hover:bg-blue-700 " onClick={()=> setIsOpen(!isOpen)}>
+      Search by Postcode Now
+      </Button>
+ 
     </div>
 
     <div className='flex-col w-75% pl-10'>
@@ -127,8 +134,9 @@ function App() {
     </div>
 
     
-     <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+     <FakeSidebar isOpen={isOpen} setIsOpen={setIsOpen} />
      <FAQSidebar isOpen={isFAQOpen} setIsOpen={setIsFAQOpen} />
+     <RegistrationSideBar isOpen={isRegisterOpen} setIsOpen={setIsRegisterOpen} />
     </div>
 
   )
