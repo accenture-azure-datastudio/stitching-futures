@@ -134,7 +134,7 @@ function App() {
     </div>
 
     
-     <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+     <FakeSidebar isOpen={isOpen} setIsOpen={setIsOpen} />
      <FAQSidebar isOpen={isFAQOpen} setIsOpen={setIsFAQOpen} />
      <RegistrationSideBar isOpen={isRegisterOpen} setIsOpen={setIsRegisterOpen} />
     </div>

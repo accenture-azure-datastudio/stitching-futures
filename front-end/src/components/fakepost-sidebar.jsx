@@ -231,6 +231,7 @@ return (
                                     <li key={idx} className="mt-1">{need}</li>
                                 ))}
                             </ul>
+            
             <hr className="mt-10 divide-x-[10px] border-2" />
           </div>
         ))}
